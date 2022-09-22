@@ -1,0 +1,5 @@
+웹서버 컨테이너 실행
+
+docker exec -it node_app /bin/bash
+
+// frondend/node_app이 컨테이너의 /app으로 마운팅
