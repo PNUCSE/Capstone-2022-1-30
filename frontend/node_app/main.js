@@ -18,36 +18,38 @@ var server = http.createServer(function handler(req,res) {
     database: 'lorawan'
   };
 
+  const date = dayjs();
+
   if(resource == '/app'){
     res.writeHead(200, {'Content-Type' : 'JSON'});
-
+    console.log(date.format());
     let connection = mysql.createConnection(conn); // DB 커넥션 생성
     connection.connect();   // DB 접속
  
-    sql = "SELECT * FROM lorawan.parking_lot where building_number="+qry;
- 
+    if(qry == 0){
+      sql = "SELECT * FROM lorawan.parking_lot";
+    }
+    else{
+      sql = "SELECT * FROM lorawan.parking_lot where building_number="+qry;
+    }
+
     connection.query(sql, function (err, results, fields) { 
       if (err) {
         console.log(err);
         setTimeout(handleDisconnect, 2000); 
       }
-      console.log(results);
-
+      console.log("app request : " + qry);
       connection.end();
-
       res.end(JSON.stringify(results, null, 2));
     });
-
   }
   else if(resource == '/chirpstack'){
     let connection = mysql.createConnection(conn); // DB 커넥션 생성
     connection.connect();   // DB 접속
  
-    const date = dayjs();
     console.log(date.format());
-
     req.setEncoding('utf-8');
-
+    
     var postdata = '';
     req.on('data',function(data){
       postdata = postdata + data;
@@ -62,8 +64,6 @@ var server = http.createServer(function handler(req,res) {
       buffer = Buffer.from(deviceAddress, 'base64');
       bufString = buffer.toString('hex');
 
-      //console.log(bufString);
-      
       building_number = bufString.substring(0,4)*1;
       parking_lot_number = bufString.substring(4)*1;
 

@@ -64,7 +64,7 @@ services:
   database:
     image: the4456/database_img
     ports:
-      - "3306:6606"
+      - "3306:3306"
 
   node_app:
     image: the4456/node_app_img
