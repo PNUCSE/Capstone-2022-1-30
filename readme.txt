@@ -1,3 +1,9 @@
+# LoRaWAN
+오픈 소스 (Open Source)를 활용한 교내 (PNU) LoRaWAN 네트워크 망 구축 및 운용
+
+end-node 펌웨어 
+
+
 /**
   @page LoRaWAN_End_Node Readme file
 
