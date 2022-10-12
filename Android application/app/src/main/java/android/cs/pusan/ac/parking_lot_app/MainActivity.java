@@ -164,7 +164,8 @@ public class MainActivity extends AppCompatActivity {
         else if (building_usage <= (building_capacity * 7)/9) color = Color.parseColor("#D6643A");
         else if (building_usage <= (building_capacity * 8)/9) color = Color.parseColor("#CA4536");
         else if (building_usage <= building_capacity) color = Color.parseColor("#BC2431");
-        @SuppressLint("UseCompatLoadingForDrawables") Drawable circle_button = getResources().getDrawable(R.drawable.circle_button);
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable circle_button 
+            = getResources().getDrawable(R.drawable.circle_button);
         circle_button.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
         building_button.setBackground(circle_button);
     }

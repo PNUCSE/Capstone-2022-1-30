@@ -40,7 +40,7 @@ services:
       - mosquitto
 
   postgresql:
-    image: postgres:9.6-alpine
+    image: the4456/postgres
     ports:
       - 5432:5432
     environment:
