@@ -30,7 +30,7 @@ Docker 내부에 있는 네모는 모두 Docker 컨테이너이며 네모 안의
 어플리케이션의 동작 화면은 위와 같다.\
 왼쪽 화면의 동그란 아이콘을 터치하면 오른쪽의 화면이 나오도록 구현했다.
 ### 4. 소개 및 시연 영상
-[![소개영상](https://www.youtube.com/vi/1t3N2keVIzs/0.jpg)](https://www.youtube.com/watch?v=1t3N2keVIzs)
+[![소개영상](http://img.youtube.com/vi/1t3N2keVIzs/0.jpg)](https://www.youtube.com/watch?v=1t3N2keVIzs)
 
 ### 5. 설치 및 사용법
 
